@@ -19,12 +19,12 @@ router.get('/countries', async (req, res) => {
                     [Op.or]: [
                         { name: {[Op.substring]: name}},
                         { name: name.toLowerCase() }, 
-                    ]}});
+                    ]}}, {include: Activity});
             country.length ?
             res.status(201).json(country) :
             res.status(404).send('País no encontrado');
         } else {
-            const allCountries = await Country.findAll();
+            const allCountries = await Country.findAll({include: Activity});
             res.status(201).json(allCountries); 
         }
     } catch (e) {
@@ -49,7 +49,6 @@ router.post('/activities', async (req, res) => {
     try {
         let activity = await Activity.create({name, difficulty, duration, season});
         let countryOfActivity = await Country.findByPk(country.toUpperCase());  
-        console.log(countryOfActivity);
         activity.addCountry(countryOfActivity);
         res.status(201).json(activity);
     } catch (e) {

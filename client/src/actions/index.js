@@ -19,3 +19,24 @@ export function getActivities() {
         })
     }
 }
+
+export function filterByContinent(payload) {
+    return {
+        type: 'FILTER_BY_CONTINENT',
+        payload
+    }
+}
+
+export function filterByActivity(payload) {
+    return {
+        type: 'FILTER_BY_ACTIVITY',
+        payload
+    }
+}
+
+export function orderByName(payload) {
+    return {
+        type: 'ORDER',
+        payload
+    }
+}

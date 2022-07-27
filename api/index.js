@@ -30,7 +30,7 @@ conn.sync({force: true}).then( async () => {
     const allCountries = apiInfo.data.map(c => {
         return {
             id: c.cca3,
-            name: c.name.common.toLowerCase(),
+            name: c.name.common[0].toUpperCase() + c.name.common.slice(1),
             image: c.flags[1],
             continent: c.region,
             capital: c.capital, 

@@ -1,73 +1,92 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { getActivities, getCountries } from '../actions';
+import { getActivities, getCountries, filterByContinent, filterByActivity, orderByName } from '../actions';
 import {Link} from 'react-router-dom';
 import Card from './Card';
+import Paging from './Paging';
 
 export default function Home() {
 
 const dispatch = useDispatch();
-const allCountries = useSelector((state) => state.countries);
-const allActivities = useSelector((state) => state.activities);
+const allCountries = useSelector(state => state.countries);
+const allActivities = useSelector(state => state.activities);
+const [currentPage, setCurrentPage] = useState(1);
+const [countriesPerPage, setCountriesPerPage] = useState(9);
+const lastCountry = currentPage * countriesPerPage;
+const firstCountry = lastCountry - countriesPerPage;
+const currentCountries = allCountries.slice(firstCountry, lastCountry);
+const [order, setOrder] = useState('');
+
+const paging = (pageNumber) => {
+    if(pageNumber === 1) setCountriesPerPage(9);
+    if(pageNumber !== 1) setCountriesPerPage(10);
+    setCurrentPage(pageNumber);
+}
 
 useEffect(() => {
     dispatch(getCountries())
     dispatch(getActivities())
 }, [dispatch]);
 
-function handleClick(e) {
+let obj = {}
+const filteredActivities = allActivities.filter(a => obj[a.name] ? false : obj[a.name] = true);
+
+function handleReload(e) {
     e.preventDefault();
     dispatch(getCountries());
 };
 
-let obj = {}
-const filteredActivities = allActivities.filter(a => obj[a.name] ? false : obj[a.name] = true);
-console.log(allActivities)
-console.log(filteredActivities);
+function handleFilterByContinent(e) {
+    dispatch(filterByContinent(e.target.value));
+}
 
+function handleFilterByActivity(e) {
+    dispatch(filterByActivity(e.target.value));
+}
+
+function handleOrderByName(e) {
+    e.preventDefault();
+    setCurrentPage(1)
+    dispatch(orderByName(e.target.value));
+    setOrder(`Ordered ${e.target.value}`);
+}
 
 return (
     <div>
         <Link to='/activities'>
-            <button>Agregar actividad</button>
+            <button>Add activity</button>
         </Link>
-            <h1>Paises</h1>
-            <button onClick={e => handleClick(e)}>Volver a cargar</button>
+            <h1>Countries</h1>
+            <button onClick={e => handleReload(e)}>Reload</button>
             <div>
-                <select>
-                    <option value='ascendente'>Ascendente</option>
-                    <option value='descendente'>Descendente</option>
+                <select onClick={e => handleOrderByName(e)}>
+                    <option value='ascendantly by name'>Ascendant by name</option>
+                    <option value='descendantly by name'>Descendant by name</option>
+                    <option value='ascendantly by population'>Ascendant by population</option>
+                    <option value='descendantly by population'>Descendant by population</option>
                 </select>
-                <select>
-                    <option value='todos'>Todos</option>
-                    <option value='africa'>África</option>
-                    <option value='america'>América</option>
-                    <option value='antartica'>Antárcica</option>
-                    <option value='asia'>Asia</option>
-                    <option value='europa'>Europa</option>
-                    <option value='oceania'>Oceanía</option>
+                <select onChange={e => handleFilterByContinent(e)}>
+                    <option value='all'>All</option>
+                    <option value='Africa'>Africa</option>
+                    <option value='Americas'>Americas</option>
+                    <option value='Antarctic'>Antarctic</option>
+                    <option value='Asia'>Asia</option>
+                    <option value='Europe'>Europe</option>
+                    <option value='Oceania'>Oceania</option>
                 </select>
-                <select>
-                    <option value='menosDe1'>Menos de 1 millón</option>
-                    <option value='entre1y10'>Entre 1 y 10 millones</option>
-                    <option value='entre10y30'>Entre 10 y 30 millones</option>
-                    <option value='entre30y60'>Entre 30 y 60 millones</option>
-                    <option value='masDe60'>Más de 60 millones</option>
-                </select>
-                <select>
+                <select onChange={e => handleFilterByActivity(e)}>
+                    <option value='all'>All</option>
                     {
-                        
                         filteredActivities?.map((a) => {
-                            return (
-                                <option value={a.id}>{a.name[0].toUpperCase() + a.name.slice(1)}</option>
-                            )
+                            return <option key={a.id} value={a.name}>{a.name[0].toUpperCase() + a.name.slice(1)}</option>
                         })
                     }
                 </select>
+                <Paging countriesPerPage={countriesPerPage} allCountries={allCountries.length} paging={paging}/>
                 <div>
                 {
-                    allCountries?.map((c) => {
+                    currentCountries?.map((c) => {
                         return (
                             <div>
                                 <Link to={'/home/' + c.id}>
@@ -78,6 +97,7 @@ return (
                     })
                 }
                 </div>
+                <Paging countriesPerPage={countriesPerPage} allCountries={allCountries.length} paging={paging}/>
             </div>
     </div>
 )
