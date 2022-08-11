@@ -18,7 +18,8 @@ router.get('/countries', async (req, res) => {
                 where: { 
                     [Op.or]: [
                         { name: {[Op.substring]: name}},
-                        { name: name.toLowerCase() }, 
+                        { name: {[Op.substring]: name[0].toUpperCase() + name.slice(1)}},
+                        { name: name[0].toUpperCase() + name.slice(1) },
                     ]}}, {include: Activity});
             country.length ?
             res.status(201).json(country) :
@@ -32,12 +33,10 @@ router.get('/countries', async (req, res) => {
     }
 });
 
-router.get('/countries/:idPais', async (req, res) => {
+router.get('/countries/:id', async (req, res) => {
     try {
-        const {idPais} = req.params;
-        const country = await Country.findByPk(idPais.toUpperCase(), {include: Activity});
-        console.log(idPais.toUpperCase());  
-        console.log(country); 
+        const {id} = req.params;
+        const country = await Country.findByPk(id.toUpperCase(), {include: Activity});
         res.status(201).json(country);  
     } catch (e) {
         res.status(404).json({error: e.message});
@@ -45,16 +44,21 @@ router.get('/countries/:idPais', async (req, res) => {
 })
 
 router.post('/activities', async (req, res) => {
-    const {name, difficulty, duration, season, country} = req.body;
     try {
-        let activity = await Activity.create({name, difficulty, duration, season});
-        let countryOfActivity = await Country.findByPk(country.toUpperCase());  
-        activity.addCountry(countryOfActivity);
+        const {name, difficulty, duration, seasons, country} = req.body;
+        console.log(req.body); 
+        let activity = await Activity.create({name, difficulty, duration, seasons: seasons.join('-')}); 
+        let countryOfActivity = await Country.findAll({
+            where: {
+                name: country
+            }
+        }); 
+        activity.addCountry(countryOfActivity); 
         res.status(201).json(activity);
     } catch (e) {
         res.status(404).json({error: e.message});
     }
-})
+}) 
 
 router.get('/activities', async (req, res) => {
     try {

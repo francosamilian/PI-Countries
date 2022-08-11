@@ -23,7 +23,7 @@ module.exports = (sequelize) => {
     },
     capital: {
       type: DataTypes.STRING,
-      // allowNull: false
+      allowNull: true
     },
     subRegion: {
       type: DataTypes.STRING,
@@ -31,11 +31,18 @@ module.exports = (sequelize) => {
     area: {
       type: DataTypes.STRING,
       get() {
-        return this.getDataValue('area') + ' km2'
+        let internationalNumberFormat = new Intl.NumberFormat('en-US');               // getter para que el area me venga con comas en el numero
+        let number = internationalNumberFormat.format(this.getDataValue('area'));
+        return number + ' km2';
       }
     },
     population: {
       type: DataTypes.STRING,
+      // get() {                                                                
+      //   let internationalNumberFormat = new Intl.NumberFormat('es-AR');
+      //   return internationalNumberFormat.format(this.getDataValue('population'));
+      // }
+                            // si pongo este getter, me deja de funcionar el ordenamiento por poblacion
     },
   });
 };

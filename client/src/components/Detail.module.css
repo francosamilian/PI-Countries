@@ -1,0 +1,116 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: normal;
+    align-content: normal;
+    background-color: #F1F1F1;
+    height: 100%;
+}
+
+.countryContainer {
+    margin-top: 0px;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    padding-bottom: 55px;
+
+}
+
+.activityContainer {
+    background-color: rgb(178, 255, 229);
+    padding-top: 100px;
+    display: flexbox;
+    /* height: 100%; */
+    width: 100%;
+    flex-direction: row;
+    padding-bottom: 32px;
+
+}
+
+.countryName {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 35px;
+    border: 3px #3D4280 solid;
+    border-radius: 6px;
+    color: #3D4280 !important;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
+    font-size: 48px; 
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+}
+
+.img {
+    border-radius: 6px;
+    margin-bottom: 25px;
+    height: 225px;
+}
+
+.info {
+    display: flex;
+    margin-left: 220px;
+    color: #3D4280 !important;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
+    font-size: 20px; 
+}
+
+.activities {
+    /* color: #3D4280 !important; */
+    color: black;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
+    font-size: 38px;
+    margin-top: -40px;
+    margin-bottom: 60px;
+}
+
+.actInfo {
+    display: flex;
+    margin-left: 220px;
+    /* color: #3D4280 !important; */
+    color: black;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
+    font-size: 20px;  
+}
+
+.duration {
+    display: flex;
+    margin-left: 220px;
+    /* color: #3D4280 !important; */
+    color: black;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
+    font-size: 20px; 
+    margin-bottom: 60px;
+}
+
+.btn {
+    /* margin-top: 300px; */
+    /* padding-top: 300px; */
+    font-weight: 548;
+    height: 35px;
+    width: 70px;
+    font-size: 21px;
+    color: #3D4280 !important;
+    border: 1px solid #3D4280;
+    border-radius: 4px;
+    background-color: #F9F9FC;
+    cursor: pointer;
+    margin-top: 0px;
+    float: inline-end;
+
+}
+
+/*  */
+
+.btn:hover {
+    color: #F9F9FC !important;
+    background: #3D4280;
+    background: linear-gradient(to top, #5e63a8, #C8C8F5);
+    /* color: black; */
+}
+
+.noAct {
+    margin-bottom: 380px;
+}

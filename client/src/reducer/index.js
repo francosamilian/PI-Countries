@@ -1,7 +1,9 @@
+
 const initialState = {
     countries: [],
     activities: [],
-    allCountries: []
+    allCountries: [],
+    countryDetail: {}
 };
 
 function rootReducer(state = initialState, {type, payload}) {
@@ -31,6 +33,7 @@ function rootReducer(state = initialState, {type, payload}) {
             }
         case 'ORDER':
             let countriesOrdered
+            if(payload === 'select') countriesOrdered = state.countries;
             if(payload === 'ascendantly by name') {
                 countriesOrdered = state.countries.sort(function(a, b) {
                     if(a.name > b.name) return 1;
@@ -55,6 +58,20 @@ function rootReducer(state = initialState, {type, payload}) {
                 ...state,
                 countries: countriesOrdered
             }
+        case 'GET_COUNTRY_BY_NAME':
+            return {
+                ...state,
+                countries: payload
+            }
+        case 'COUNTRY_DETAIL':
+            return {
+                ...state,
+                countryDetail: payload
+            }
+        // case 'CREATE_ACTIVITY':  // no hace falta poner esto
+        //     return {
+        //         ...state
+        //     }
         default:
             return state;
     }

@@ -1,0 +1,101 @@
+/* class es . / id es # / todo el tag es sin nada */
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: normal;
+    align-content: normal;
+    background-color: #F1F1F1;
+    height: 713px;
+    /* width: 100% */
+}
+
+.leftContainer {
+    padding-left: 50px;
+    width: 50%;
+}
+
+.rigthContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(178, 255, 229);
+    /* padding-right: 0px; */
+}
+
+.title {
+    color: #3D4280 !important;
+    padding-top: 50px;
+    padding-bottom: 85px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
+    font-size: 41px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 45.1px;
+}
+
+.image1 {
+    /* padding-top: 110px; */
+    height: 400px;
+    width: 640px;
+    border: 3px #3D4280 solid;
+    border-radius: 15px;
+}
+
+.image2 {
+    height: 250px;
+    width: 250px;
+    border: 3px #3D4280 solid;
+    border-radius: 15px;
+    margin-left: 210px;
+    margin-top: 50px;
+    
+}
+
+.image3 {
+    height: 300px;
+    width: 300px;
+    margin-left: 185px;
+    margin-top: 45px;
+    
+}
+
+.btn {
+    font-family: helvetica;
+    font-weight: bold;
+    color: #3D4280 !important;
+    font-size: 45px;
+    text-shadow: 0px 0px 0px #1A242E;
+    box-shadow: 2px 2px 3px #EDEDED;
+    border-radius: 17px;
+    border: 3px solid #3D4280;
+    background: #F9F9FC;
+    margin-left: 80px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    cursor: pointer;
+    width: 500px;
+    height: 100px;
+  }
+  
+  .btn:hover {
+    color: #F9F9FC !important;
+    background: #3D4280;
+    background: linear-gradient(to top, #3D4280, #C8C8F5);
+  }
+  
+  .paragraph {
+    margin-right: 60px;
+    margin-left: 80px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 500px;
+    font-family: Tahoma; 
+    font-size: 20px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 540; 
+  }

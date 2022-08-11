@@ -1,0 +1,40 @@
+.container {
+    background-color: rgb(251, 251, 251);
+    border: 3px solid #3D4280;
+    border-radius: 9px;
+    height: 240px;
+    margin: 10px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding-left: 45px;
+    padding-right: 45px;
+
+}
+
+.name {
+    text-decoration: none;
+    color: #3D4280 !important;
+    margin-bottom: 15px;
+    margin-top: 17px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
+    font-size: 17px;
+}
+
+.continent {
+    text-decoration: none;
+    color: #3D4280 !important;
+    padding-bottom: 15px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif; 
+    font-size: 14px;
+
+}
+
+.image {
+    max-height: 110px;
+    border-radius: 4px;
+}
+
+.container:hover {
+    background-color: #e7e9ff;
+}

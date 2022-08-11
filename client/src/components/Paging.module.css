@@ -1,0 +1,41 @@
+.paging {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-left: 350px;
+    margin-right: 350px;
+}
+
+.numbers {
+    background-color: rgb(251, 251, 251);
+    cursor: pointer;
+    border: solid 2px rgb(191, 191, 191);
+    border-radius: 5px;
+    width: 28px;
+    height: 25px;
+    margin: 1px;
+    margin-top: 5px;
+}
+
+.numbers:hover {
+    background-color: #e7e9ff;
+
+}
+
+.selectedPage {
+    background-color: rgb(201, 201, 201);
+    cursor: pointer;
+    border: solid 2px rgb(160, 160, 160);
+    border-radius: 5px;
+    width: 28px;
+    height: 25px;
+    margin: 1px;
+    margin-top: 5px;
+    text-decoration-line: underline;
+    text-underline-offset: 1px;
+}
+
+.number {
+    display: flex;
+    justify-content: center;
+}
