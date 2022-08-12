@@ -8,7 +8,6 @@ function validate(form) {
     let errors = {};
     if(!form.name) errors.name = 'The activity must have a name';
     else if(!form.difficulty || form.difficulty < 1 || form.difficulty > 5) errors.difficulty = 'The difficulty must be between 1 and 5';
-    // else if(!form.season) errors.season = 'Select a season';
     else if(form.duration === '') errors.duration = 'The activity must have a duration';
     else if(form.seasons.length === 0) errors.seasons = 'You must select at least one season'
     else if(form.country.length === 0) errors.country = 'The activity must be assigned to a country';
@@ -18,6 +17,7 @@ function validate(form) {
 export default function CreateActivity() {
 
 const allCountries = useSelector(state => state.countries);
+console.log(allCountries);
 const allCountryNames = allCountries.map(c => c.name).sort();
 const dispatch = useDispatch();
 const history = useHistory();
@@ -39,38 +39,22 @@ function handleSelectCountryChange(e) {
     }
 }
 
-// function handleSelectSeasonChange(e) {
-//     console.log(e.target.value)
-//     setForm({...form, season: e.target.value});
-//     setErrors(validate({...form, season: e.target.value}));
-// }
-
 function handleCheckChange(e) {
     let seasons = form.seasons;
     let seasonFound = seasons.indexOf(e.target.value);
     if(seasonFound >= 0) seasons.splice(seasonFound, 1);     // si la season ya está en el array, la saco
     else seasons.push(e.target.value);                       // si la season no está en el array, la agrego
     setForm({...form, seasons: seasons});
-    // const validations = validate(form);
-    // setErrors(validations);
     setErrors(validate(form));
-    // let seasons = ['Summer', 'Winter', 'Spring', 'Autumn'];
-    // if(e.target.checked) {setForm({...form, season: e.target.value})};
-    // if(!e.target.checked) {setForm({...form, season: ''})};
 }
 
 function handleDelete(e) {
-    // console.log(e);
-    // e.preventDefault();
     setForm({...form, country: form.country.filter(c => c !== e)})
 }
 
 function handleSubmit(e) {
-    // let checkBoxes = document.getElementById('#checkbox');
-    // checkBoxes.checked = false;
     e.preventDefault();
     if(!form.name || form.country.length === 0) return alert('There is missing information');
-    // if(!form.season || form.season === 'Select') return alert('You must select a season');
     dispatch(createActivity(form));
     alert('Activity created successfully');
     setForm({name: '', difficulty: '', duration: '', seasons: [], country: []});
@@ -108,19 +92,8 @@ return (
                         <label className={s.labelCheck} ><input className={s.check} id='checkbox' type='checkbox' name='Summer' value='Summer' onChange={e => handleCheckChange(e)}/>Summer</label>
                         <label className={s.labelCheck} ><input className={s.check} id='checkbox' type='checkbox' name='Autumn' value='Autumn' onChange={e => handleCheckChange(e)}/>Autumn</label>
                         <label className={s.labelCheck} ><input className={s.check} id='checkbox' type='checkbox' name='Spring' value='Spring' onChange={e => handleCheckChange(e)}/>Spring</label>
-                        {/* <label><input id='checkbox' type='checkbox' name='All' value='All' onChange={e => handleCheckChange(e)}/>All</label> */}
                         {errors.seasons && (<p className={s.errorSeason} >{errors.seasons}</p>)}
                     </div>
-                    {/* <div>
-                        <label>Season: </label>
-                        <select onChange={e => handleSelectSeasonChange(e)}>
-                            <option value="Select">Select</option>
-                            <option value="Summer">Summer</option>
-                            <option value="Winter">Winter</option>
-                            <option value="Spring">Spring</option>
-                            <option value="Autumn">Autumn</option>
-                        </select>
-                    </div> */}
                     <div>
                         <label className={s.label} name='country'>Country: </label>
                         <select className={s.select} onChange={e => handleSelectCountryChange(e)}>

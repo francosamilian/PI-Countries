@@ -10,6 +10,17 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
+let errors = {};
+
+function validate(form) {
+    if(!form.name) errors.name = 'The activity must have a name';
+    else if(!form.difficulty || form.difficulty < 1 || form.difficulty > 5) errors.difficulty = 'The difficulty must be between 1 and 5';
+    else if(form.duration === '') errors.duration = 'The activity must have a duration';
+    else if(form.seasons.length === 0) errors.seasons = 'You must select at least one season'
+    else if(form.country.length === 0) errors.country = 'The activity must be assigned to a country';
+    return errors;
+};
+
 router.get('/countries', async (req, res) => {
     try {
         const {name} = req.query;
@@ -33,11 +44,26 @@ router.get('/countries', async (req, res) => {
     }
 });
 
-router.get('/countries/:id', async (req, res) => {
+// router.get('/countries/:id', async (req, res) => {
+//     try {
+//         const {id} = req.params;
+//         const country = await Country.findByPk(id.toUpperCase(), {include: Activity});
+//         res.status(201).json(country);  
+//     } catch (e) {
+//         res.status(404).json({error: e.message});
+//     }
+// })
+
+router.get('/countries/:id', (req, res) => {
     try {
         const {id} = req.params;
-        const country = await Country.findByPk(id.toUpperCase(), {include: Activity});
-        res.status(201).json(country);  
+        Country.findByPk(id.toUpperCase(), {include: Activity})
+            .then(country => {
+                res.status(201).json(country);  
+            })
+            .catch(e => {
+                res.status(404).json({error: e.message});
+            })
     } catch (e) {
         res.status(404).json({error: e.message});
     }
@@ -46,8 +72,14 @@ router.get('/countries/:id', async (req, res) => {
 router.post('/activities', async (req, res) => {
     try {
         const {name, difficulty, duration, seasons, country} = req.body;
+        const validateActivity = {name, difficulty, duration, seasons, country};
+        validate(validateActivity);
+        if(Object.entries(errors).length > 0) {
+            errors = {};
+            return res.status(404).send('There is missing or incorrect information')
+        };
         console.log(req.body); 
-        let activity = await Activity.create({name, difficulty, duration, seasons: seasons.join('-')}); 
+        let activity = await Activity.create({name, difficulty, duration, seasons: seasons.join(' - ')});
         let countryOfActivity = await Country.findAll({
             where: {
                 name: country

@@ -98,7 +98,6 @@ return (
                 </select>
                 <button className={s.btnReload} onClick={e => handleReload(e)}>Reload all countries</button>
             </div>
-                {/* <Paging countriesPerPage={countriesPerPage} allCountries={allCountries.length} paging={paging}/> */}
                 <div className={s.cardContainer}>
                 {
                     currentCountries?.map((c) => {

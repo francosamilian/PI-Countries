@@ -1,42 +1,58 @@
-const { Country, Activity, conn } = require('../../src/db.js');
-const { expect } = require('chai');
+const { Activity, conn } = require('../../src/db.js');
 
-describe('Country model', () => {
-  before(() => conn.authenticate()
-    .catch((err) => {
-      console.error('Unable to connect to the database:', err);
-    }));
-  describe('Validators', () => {
-    beforeEach(() => Country.sync({ force: true }));
-    describe('name', () => {
-      it('should throw an error if name is null', (done) => {
-        Activity.create({})
-          .then(() => done('It requires a valid name'))
-          .catch(() => done());
-      });
-      it('should work when its a valid name', () => {
-        Activity.create({ name: 'Argentina' });
-      });
+describe('Activity model', () => {
+  beforeAll(async () => {
+    await conn.sync({force: true});
     });
-    describe('difficulty', () => {
-      it('should throw an error if difficulty is null', (done) => {
-        Activity.create({})
-          .then(() => done(new Error('It requires a valid difficulty')))
-          .catch(() => done());
+
+  describe('Name and duration', () => {
+      it('should not create the activity if the name is not sent', async () => {
+        expect.assertions(1);
+        try {
+          await Activity.create({duration: '10 minutes'});
+        } catch (e) {
+          expect(e.message).toBeDefined();
+        }
       });
-      it('should work when the difficulty is between 1 and 5', () => {
-        Activity.create({name: 'hola', difficulty: 4, seasons: 'Summer', duration: '2 hours', country: ['name']});
+      it('should not create the activity if the duration is not sent', async () => {
+        expect.assertions(1);
+        try {
+          await Activity.create({name: 'surf'});
+        } catch (e) {
+          expect(e.message).toBeDefined();
+        }
       });
+  });
+  
+  describe('Seasons and difficulty', () => {
+    it('should not create the activity if the seasons are not specified', async () => {
+      expect.assertions(1);
+      try {
+        await Activity.create({name: 'Surf'});
+      } catch (e) {
+        expect(e.message).toBeDefined();
+      }
     });
-    describe('season', () => {
-      it('should throw an error if season is null', (done) => {
-        Activity.create({name: 'hola', difficulty: 4, seasons: 'Summer', duration: '2 hours', country: ['name']})
-          .then(() => done())
-          .catch(() => done().expect(new Error('It requires a valid season')));
-      });
-      it('should work when its a valid season', () => {
-        Activity.create({name: 'hola', difficulty: 4, seasons: 'Summer', duration: '2 hours', country: ['name']});
-      });
+    it('should not create the activity if the difficulty is not sent', async () => {
+      expect.assertions(1);
+      try {
+        await Activity.create({duration: '2 hours'});
+      } catch (e) {
+        expect(e.message).toBeDefined();
+      }
     });
   });
-}); 
+  
+  describe('Create activity', () => {
+    it('should create the activity if all properties are sent correctly', async () => {
+      const activity = await Activity.create({name: 'Surf', duration: '1 hour', seasons: 'Summer', difficulty: 4});
+      expect(activity.toJSON()).toHaveProperty('name', 'Surf');
+      expect(activity.toJSON()).toHaveProperty('duration', '1 hour');
+      expect(activity.toJSON()).toHaveProperty('seasons', 'Summer');
+      expect(activity.toJSON()).toHaveProperty('difficulty', 4);
+    });
+  });
+});
+
+
+
