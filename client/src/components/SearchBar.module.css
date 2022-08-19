@@ -19,7 +19,6 @@
     border-radius: 4px;
     background-color: #F9F9FC;
     cursor: pointer;
-
 }
 
 .form {
@@ -33,5 +32,4 @@
     color: #F9F9FC !important;
     background: #3D4280;
     background: linear-gradient(to top, #5e63a8, #C8C8F5);
-    /* color: black; */
 }

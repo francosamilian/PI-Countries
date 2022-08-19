@@ -7,8 +7,6 @@
     align-content: normal;
     background-color: #F1F1F1;
     height: 713px;
-
-    /* width: 100% */
 }
 
 .leftContainer {
@@ -27,7 +25,6 @@
     justify-content: space-around;
     width: 80%;
     background-color: rgb(178, 255, 229);
-    /* padding-right: 0px; */
 }
 
 .btnBack {
@@ -76,8 +73,6 @@
     height: 350px;
     width: 350px;
     margin-bottom: 150px;
-    /* margin-left: 40px; */
-    /* margin-right: 40px; */
     margin-top: -100px;
     border: 3px #3D4280 solid;
     border-radius: 15px;
@@ -132,7 +127,6 @@
 }
 
 .label {
-    /* margin-bottom: 55px; */
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
     font-size: 20px;
     margin-left: 15px;
@@ -150,7 +144,6 @@
 }
 
 .check {
-    /* margin-top: 30px; */
     margin-bottom: 25px;
     height: 15px;
     width: 15px;
@@ -167,16 +160,11 @@
     width: 311px;
     font-size: 18px;
     color: black !important;
-    /* color: #3D4280 !important; */
     border: 1px solid #3D4280;
     border-radius: 4px;
     background-color: #F9F9FC;
     cursor: pointer;
 }
-
-/* .labelCheck {
-    margin-bottom: 300px;
-} */
 
 .errorName {
     color: red;
@@ -241,7 +229,6 @@
 }
 
 .addedContainer {
-    /* max-width: 500px; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

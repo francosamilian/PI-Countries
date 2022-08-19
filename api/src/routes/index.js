@@ -44,16 +44,6 @@ router.get('/countries', async (req, res) => {
     }
 });
 
-// router.get('/countries/:id', async (req, res) => {
-//     try {
-//         const {id} = req.params;
-//         const country = await Country.findByPk(id.toUpperCase(), {include: Activity});
-//         res.status(201).json(country);  
-//     } catch (e) {
-//         res.status(404).json({error: e.message});
-//     }
-// })
-
 router.get('/countries/:id', (req, res) => {
     try {
         const {id} = req.params;

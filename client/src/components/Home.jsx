@@ -78,6 +78,7 @@ return (
                     <option value='descendantly by name'>Descendant by name</option>
                     <option value='ascendantly by population'>Ascendant by population</option>
                     <option value='descendantly by population'>Descendant by population</option>
+                    <option value="top 5">Top 5</option>
                 </select>
                 <select id='selectContinent' className={s.select} onChange={e => handleFilterByContinent(e)}>
                     <option value='all'>All</option>

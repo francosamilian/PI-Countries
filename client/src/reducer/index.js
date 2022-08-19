@@ -54,6 +54,12 @@ function rootReducer(state = initialState, {type, payload}) {
                 countriesOrdered = state.countries.sort(function(a, b) {
                     return b.population - a.population;
                 })}
+            else if(payload === 'top 5') {
+                countriesOrdered = state.countries.sort(function(a, b) {
+                   return b.population - a.population;
+                })
+                countriesOrdered = countriesOrdered.slice(0,5);
+            }
             return {
                 ...state,
                 countries: countriesOrdered
@@ -68,10 +74,6 @@ function rootReducer(state = initialState, {type, payload}) {
                 ...state,
                 countryDetail: payload
             }
-        // case 'CREATE_ACTIVITY':  // no hace falta poner esto
-        //     return {
-        //         ...state
-        //     }
         default:
             return state;
     }

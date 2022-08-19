@@ -1,5 +1,3 @@
-/* class es . / id es # / todo el tag es sin nada */
-
 .mainContainer {
     display: flex;
     flex-direction: row;
@@ -9,7 +7,6 @@
     align-content: normal;
     background-color: #F1F1F1;
     height: 713px;
-    /* width: 100% */
 }
 
 .leftContainer {
@@ -22,7 +19,6 @@
     flex-direction: column;
     justify-content: space-around;
     background-color: rgb(178, 255, 229);
-    /* padding-right: 0px; */
 }
 
 .title {
@@ -38,7 +34,6 @@
 }
 
 .image1 {
-    /* padding-top: 110px; */
     height: 400px;
     width: 640px;
     border: 3px #3D4280 solid;

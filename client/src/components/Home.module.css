@@ -4,7 +4,6 @@
     background-color: #F1F1F1;
     border-bottom: 1px solid black;
     height: 60px;
-    /* margin-bottom: -10px; */
 }
 
 .title {
@@ -59,9 +58,6 @@
 }
 
 .filtersContainer {
-    /* display: center; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
     margin: 15px;
     margin-left: 47px;
 }
@@ -102,6 +98,4 @@
 .mainContainer {
     margin-left: 10px;
     margin-right: 10px;
-    /* height: 636px; */
-    /* background-color: rgb(216, 255, 241); */
 }

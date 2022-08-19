@@ -60,8 +60,7 @@ export function getCountryByName(name) {
 export function createActivity(payload) {  
     return async function() {  
         try {
-            await axios.post('http://localhost:3001/activities', payload);           // no hace falta pasar el dispatch
-            // return activity;                                                     // no hace falta poner el return
+            await axios.post('http://localhost:3001/activities', payload);
         } catch (e) {
             console.log(e)
         }                                                 

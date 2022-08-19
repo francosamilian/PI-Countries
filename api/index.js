@@ -22,8 +22,6 @@ const { conn } = require('./src/db.js');
 const { default: axios } = require('axios');
 const { Country } = require('./src/db.js');
 
-
-
 // Syncing all the models at once. 
 conn.sync({force: true}).then( async () => { 
     const apiInfo = await axios.get('https://restcountries.com/v3/all');
