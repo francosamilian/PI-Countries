@@ -45,7 +45,6 @@ export function getCountryByName(name) {
     return async function(dispatch) {
         try {
             let country = await axios.get(`http://localhost:3001/countries?name=${name}`);
-            console.log(country.data)
             return dispatch({
                 type: 'GET_COUNTRY_BY_NAME',
                 payload: country.data,

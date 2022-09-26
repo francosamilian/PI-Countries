@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-left: 350px;
-    margin-right: 350px;
+    padding-left: 0%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .numbers {
@@ -11,10 +12,10 @@
     cursor: pointer;
     border: solid 2px rgb(191, 191, 191);
     border-radius: 5px;
-    width: 28px;
-    height: 25px;
+    width: 35px;
+    height: 31px;
     margin: 1px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .numbers:hover {
@@ -27,10 +28,10 @@
     cursor: pointer;
     border: solid 2px rgb(160, 160, 160);
     border-radius: 5px;
-    width: 28px;
-    height: 25px;
+    width: 35px;
+    height: 31px;
     margin: 1px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     text-decoration-line: underline;
     text-underline-offset: 1px;
 }

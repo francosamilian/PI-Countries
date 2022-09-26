@@ -2,7 +2,8 @@
     background-color: rgb(251, 251, 251);
     border: 3px solid #3D4280;
     border-radius: 9px;
-    height: 240px;
+    /* height: 240px; */
+    height: 92%;
     margin: 10px;
     justify-content: space-between;
     display: flex;
@@ -31,7 +32,8 @@
 }
 
 .image {
-    max-height: 110px;
+    max-height: 170px;
+    width: 100%;
     border-radius: 4px;
 }
 

@@ -37,7 +37,6 @@ function handleOrder(e) {
     e.preventDefault();
     setCurrentPage(1);
     dispatch(orderByName(e.target.value));
-    console.log(e.target.value)
     setOrder(`Ordered ${e.target.value}`);
 }
 
@@ -58,7 +57,6 @@ function handleFilterByContinent(e) {
 function handleFilterByActivity(e) {
     setCurrentPage(1);
     dispatch(filterByActivity(e.target.value));
-    console.log(e.target.value);
 }
 
 return (
@@ -78,7 +76,7 @@ return (
                     <option value='descendantly by name'>Descendant by name</option>
                     <option value='ascendantly by population'>Ascendant by population</option>
                     <option value='descendantly by population'>Descendant by population</option>
-                    <option value="top 5">Top 5</option>
+                    <option value="top 5">Top 5 population</option>
                 </select>
                 <select id='selectContinent' className={s.select} onChange={e => handleFilterByContinent(e)}>
                     <option value='all'>All</option>

@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { default: axios } = require('axios');
 const { Country, Activity } = require('../db.js');
-const { Op } = require('sequelize')
+const { Op } = require('sequelize');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -68,7 +68,6 @@ router.post('/activities', async (req, res) => {
             errors = {};
             return res.status(404).send('There is missing or incorrect information')
         };
-        console.log(req.body); 
         let activity = await Activity.create({name, difficulty, duration, seasons: seasons.join(' - ')});
         let countryOfActivity = await Country.findAll({
             where: {

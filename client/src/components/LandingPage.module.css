@@ -6,18 +6,20 @@
     align-items: normal;
     align-content: normal;
     background-color: #F1F1F1;
-    height: 713px;
+    height: 100vh;
 }
 
 .leftContainer {
     padding-left: 50px;
-    width: 50%;
+    width: 60%;
 }
 
 .rigthContainer {
+    width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(178, 255, 229);
 }
 
@@ -26,7 +28,7 @@
     padding-top: 50px;
     padding-bottom: 85px;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 41px; 
+    font-size: 3.4rem; 
     font-style: normal; 
     font-variant: normal; 
     font-weight: 700; 
@@ -34,8 +36,10 @@
 }
 
 .image1 {
-    height: 400px;
-    width: 640px;
+    /* height: 400px; */
+    /* width: 640px; */
+    height: 60%;
+    width: 80%;
     border: 3px #3D4280 solid;
     border-radius: 15px;
 }
@@ -51,10 +55,14 @@
 }
 
 .image3 {
-    height: 300px;
-    width: 300px;
-    margin-left: 185px;
-    margin-top: 45px;
+    /* height: 300px; */
+    /* width: 300px; */
+    height: 58%;
+    width: 65%;
+    align-items: center;
+    margin-top: -10%;
+    /* margin-left: 185px; */
+    /* margin-top: 45px; */
     
 }
 
@@ -62,18 +70,23 @@
     font-family: helvetica;
     font-weight: bold;
     color: #3D4280 !important;
-    font-size: 45px;
+    font-size: 3rem;
     text-shadow: 0px 0px 0px #1A242E;
     box-shadow: 2px 2px 3px #EDEDED;
     border-radius: 17px;
     border: 3px solid #3D4280;
     background: #F9F9FC;
-    margin-left: 80px;
-    margin-bottom: 100px;
-    margin-right: 100px;
     cursor: pointer;
-    width: 500px;
-    height: 100px;
+    /* padding-left: 15%; */
+    /* padding-right: 15%; */
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: 27vw;
+    /* margin-left: 80px; */
+    /* margin-bottom: 100px; */
+    /* margin-right: 100px; */
+    /* width: 500px; */
+    /* height: 100px; */
   }
   
   .btn:hover {
@@ -83,13 +96,14 @@
   }
   
   .paragraph {
-    margin-right: 60px;
-    margin-left: 80px;
-    margin-bottom: 50px;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    margin-top: -10px;
     text-align: center;
-    width: 500px;
+    /* width: 500px; */
     font-family: Tahoma; 
-    font-size: 20px; 
+    font-size: 1.5rem; 
     font-style: normal; 
     font-variant: normal; 
     font-weight: 540; 

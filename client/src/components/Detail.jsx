@@ -10,7 +10,6 @@ export class Detail extends Component {
     constructor(props) {
         super(props);
         this.id = props.match.params.id;
-        console.log(this.id)
     }
 
     componentDidMount() {
@@ -19,10 +18,8 @@ export class Detail extends Component {
 
     render() {
         let country = this.props.country;
-        console.log(country)
         return (
             <div>
-                {console.log(country)}
             {
             Object.entries(country).length>0?       
             <div className={s.mainContainer}>
@@ -45,7 +42,7 @@ export class Detail extends Component {
                         <h2 className={s.actInfo} >Difficulty: {a.difficulty}</h2>
                         <h2 className={s.duration} >Duration: {a.duration}</h2>
                     </div> ): <div> <p className={s.noAct} >This country has no activities</p></div>}
-                    <Link to='/home'><button className={s.btn} >Back</button></Link>
+                    <Link className={s.link} to='/home'><button className={s.btn} >Back</button></Link>
                 </div> 
             </div>
             : <p>Loading...</p>

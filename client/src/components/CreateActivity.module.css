@@ -6,33 +6,40 @@
     align-items: normal;
     align-content: normal;
     background-color: #F1F1F1;
-    height: 713px;
+    height: 100vh;
+}
+
+.link {
+    margin-bottom: 10%;
 }
 
 .leftContainer {
-    width: 50%;
+    margin-top: -5%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     align-content: stretch;
 }
 
 .rightContainer {
-    display: center;
+    display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 80%;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
     background-color: rgb(178, 255, 229);
 }
 
 .btnBack {
-    margin-top: 60px;
+    margin-bottom: 20%;
     font-weight: 548;
-    height: 35px;
-    width: 170px;
-    font-size: 21px;
+    height: 80%;
+    padding: 3%;
+    width: 7vw;
+    font-size: 1.4rem;
     color: #3D4280 !important;
     border: 1px solid #3D4280;
     border-radius: 4px;
@@ -40,18 +47,25 @@
     cursor: pointer;
 }
 
+
+.formContainer {
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btnCreate {
-    margin-top: 60px;
-    margin-left: 120px;
     font-weight: 548;
-    height: 35px;
-    width: 170px;
-    font-size: 21px;
+    font-size: 30px;
     color: #3D4280 !important;
     border: 1px solid #3D4280;
     border-radius: 4px;
     background-color: #F9F9FC;
     cursor: pointer;
+    margin-top: 15px;
+    height: 6vh;
+    width: 15vw;
 }
 
 .btnBack:hover {
@@ -70,10 +84,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 350px;
-    width: 350px;
-    margin-bottom: 150px;
-    margin-top: -100px;
+    height: 50%;
+    width: 60%;
     border: 3px #3D4280 solid;
     border-radius: 15px;
 }
@@ -84,11 +96,7 @@
     border: 1px solid #3D4280;
     border-radius: 4px;
     height: 25px;
-    width: 311px;
-    padding-left: 7px;
-    margin-bottom: 25px;
-    margin-left: 10px;
-
+    width: 20vw;
 }
 
 .inputDifficulty {
@@ -97,11 +105,7 @@
     border: 1px solid #3D4280;
     border-radius: 4px;
     height: 25px;
-    width: 286px;
-    padding-left: 7px;
-    margin-bottom: 25px;
-    margin-left: 10px;
-
+    width: 18.2vw;
 }
 
 .inputDuration {
@@ -110,54 +114,61 @@
     border: 1px solid #3D4280;
     border-radius: 4px;
     height: 25px;
-    width: 287px;
-    padding-left: 7px;
-    margin-bottom: 25px;
-    margin-left: 10px;
-
+    width: 18.3vw;
 }
 
 .title {
     text-decoration: underline;
-    margin-bottom: 90px;
-    margin-top: 60px;
+    margin-top: 0%;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 35px;
+    font-size: 2.7rem;
 
 }
 
 .label {
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 20px;
-    margin-left: 15px;
+    font-size: 1.7rem;
 }
 
 .form {
+    height: 60vh;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
     align-content: normal;
-    margin-left: 252px;
     
 }
 
 .check {
-    margin-bottom: 25px;
-    height: 15px;
-    width: 15px;
-    margin-left: 10px;
+    width: 1.8vw;
+    height: 1.85vh;
+    width: 1.85vw;
+    font-size: 1rem;
+}
 
+.difContainer {
+    margin-top: 10px;
+}
+
+.durContainer {
+    margin-top: 10px;
+}
+
+.seasonContainer {
+    margin-top: 10px;
+}
+
+.countryContainer {
+    margin-top: 10px;
 }
 
 .select {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 10px;
     font-weight: 520;
-    height: 75x;
-    width: 311px;
+    height: 25px;
+    width: 19.3vw;
     font-size: 18px;
     color: black !important;
     border: 1px solid #3D4280;
@@ -168,42 +179,46 @@
 
 .errorName {
     color: red;
-    margin-top: -23px;
-    margin-left: -50px;
-    margin-bottom: 25px;
-    font-size: smaller;
+    margin-top: 1%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
 }
 
 .errorDif {
     color: red;
-    margin-top: -23px;
-    margin-left: 49px;
-    margin-bottom: 25px;
-    font-size: smaller;
+    margin-top: 1%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+
 }
 
 .errorDur {
     color: red;
-    margin-top: -23px;
-    margin-left: 13px;
-    margin-bottom: 25px;
-    font-size: smaller;
+    margin-top: 1%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+
 }
 
 .errorSeason {
     color: red;
-    margin-top: -12px;
-    margin-left: 2px;
-    margin-bottom: 10px;
-    font-size: smaller;
+    margin-top: 1%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+
 }
 
 .errorCountry {
     color: red;
-    margin-top: 10px;
-    margin-left: 37px;
-    margin-bottom: 0px;
-    font-size: smaller;
+    margin-top: 1%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1rem;
+
 }
 
 .btnRemove {

@@ -6,14 +6,17 @@
     align-items: normal;
     align-content: normal;
     background-color: #F1F1F1;
-    height: 100%;
+    height: 100vh;
 }
 
 .countryContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 0px;
-    height: 100%;
-    width: 100%;
-    flex-direction: row;
+    /* height: 100%; */
+    width: 50%;
+    flex-direction: column;
     padding-bottom: 55px;
 
 }
@@ -21,36 +24,35 @@
 .activityContainer {
     background-color: rgb(178, 255, 229);
     padding-top: 100px;
-    display: flexbox;
-    width: 100%;
-    flex-direction: row;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
     padding-bottom: 32px;
 
 }
 
 .countryName {
-    margin-left: 50px;
-    margin-right: 50px;
     margin-bottom: 35px;
     border: 3px #3D4280 solid;
     border-radius: 6px;
     color: #3D4280 !important;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 48px; 
-    padding-top: 7px;
-    padding-bottom: 7px;
-
+    font-size: 2rem; 
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 17%;
+    padding-left: 17%;
 }
 
 .img {
     border-radius: 6px;
-    margin-bottom: 25px;
+    margin-bottom: 7%;
+    margin-top: 4%;
     height: 225px;
 }
 
 .info {
     display: flex;
-    margin-left: 220px;
     color: #3D4280 !important;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
     font-size: 20px; 
@@ -60,8 +62,10 @@
     color: black;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
     font-size: 38px;
-    margin-top: -40px;
-    margin-bottom: 60px;
+    margin-top: -5%;
+    margin-bottom: 5%;
+    /* margin-top: -40px; */
+    /* margin-bottom: 60px; */
 }
 
 .actInfo {
@@ -83,17 +87,24 @@
 
 .btn {
     font-weight: 548;
-    height: 35px;
-    width: 70px;
+    height: 5vh;
+    width: 4vw;
     font-size: 21px;
     color: #3D4280 !important;
     border: 1px solid #3D4280;
     border-radius: 4px;
     background-color: #F9F9FC;
     cursor: pointer;
-    margin-top: 0px;
+    margin-bottom: 0%;
     float: inline-end;
+}
 
+.link {
+    height: 27vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .btn:hover {
