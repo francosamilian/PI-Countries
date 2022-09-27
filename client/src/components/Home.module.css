@@ -4,7 +4,7 @@
     background-color: #F1F1F1;
     border-bottom: 1px solid black;
     /* height: 60px; */
-    height: 8vh;
+    height: 9vh;
 }
 
 .title {
@@ -29,7 +29,7 @@
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 50%;
     /* height: 532px; */
-    height: 85%;
+    height: 80%;
     background-color: rgb(216, 255, 241);
     align-content: stretch;
 }
@@ -100,5 +100,5 @@
 .mainContainer {
     margin-left: 10px;
     margin-right: 10px;
-    height: 90vh;
+    height: 89vh;
 }

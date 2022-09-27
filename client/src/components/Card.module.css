@@ -3,7 +3,7 @@
     border: 3px solid #3D4280;
     border-radius: 9px;
     /* height: 240px; */
-    height: 92%;
+    height: 90%;
     margin: 10px;
     justify-content: space-between;
     display: flex;
@@ -16,23 +16,23 @@
 .name {
     text-decoration: none;
     color: #3D4280 !important;
-    margin-bottom: 15px;
-    margin-top: 17px;
+    margin-bottom: 12px;
+    margin-top: 13px;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .continent {
     text-decoration: none;
     color: #3D4280 !important;
-    padding-bottom: 15px;
+    padding-bottom: 8px;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 14px;
+    font-size: 13px;
 
 }
 
 .image {
-    max-height: 170px;
+    max-height: 130px;
     width: 100%;
     border-radius: 4px;
 }

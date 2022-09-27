@@ -6,38 +6,37 @@
     align-items: normal;
     align-content: normal;
     background-color: #F1F1F1;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .countryContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin-top: 0px;
-    /* height: 100%; */
+    /* margin-top: 150px; */
     width: 50%;
     flex-direction: column;
-    padding-bottom: 55px;
+    /* padding-bottom: 55px; */
 
 }
 
 .activityContainer {
     background-color: rgb(178, 255, 229);
-    padding-top: 100px;
+    /* padding-top: 100px; */
     display: flex;
     width: 50%;
     flex-direction: column;
-    padding-bottom: 32px;
+    /* padding-bottom: 32px; */
 
 }
 
 .countryName {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     border: 3px #3D4280 solid;
     border-radius: 6px;
     color: #3D4280 !important;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 2rem; 
+    font-size: 2.3rem; 
     padding-top: 2%;
     padding-bottom: 2%;
     padding-right: 17%;
@@ -46,61 +45,68 @@
 
 .img {
     border-radius: 6px;
-    margin-bottom: 7%;
-    margin-top: 4%;
-    height: 225px;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    height: 180px;
+    width: 340px;
 }
 
 .info {
     display: flex;
     color: #3D4280 !important;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 20px; 
+    font-size: 17px; 
 }
 
 .activities {
     color: black;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
     font-size: 38px;
-    margin-top: -5%;
-    margin-bottom: 5%;
+    /* margin-top: -5%; */
+    /* margin-bottom: 5%; */
     /* margin-top: -40px; */
     /* margin-bottom: 60px; */
 }
 
 .actInfo {
     display: flex;
-    margin-left: 220px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-left: 220px; */
     color: black;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 20px;  
+    font-size: 17px;  
 }
 
 .duration {
     display: flex;
-    margin-left: 220px;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    /* margin-left: 220px; */
     color: black;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 20px; 
-    margin-bottom: 60px;
+    font-size: 17px; 
+    margin-bottom: 40px;
 }
 
 .btn {
     font-weight: 548;
     height: 5vh;
-    width: 4vw;
+    width: 6vw;
     font-size: 21px;
     color: #3D4280 !important;
     border: 1px solid #3D4280;
     border-radius: 4px;
     background-color: #F9F9FC;
     cursor: pointer;
-    margin-bottom: 0%;
+    margin-bottom: 5%;
     float: inline-end;
 }
 
 .link {
-    height: 27vh;
+    height: 17vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -114,5 +120,5 @@
 }
 
 .noAct {
-    margin-bottom: 380px;
+    margin-bottom: 210px;
 }

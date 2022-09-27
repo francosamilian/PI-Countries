@@ -3,6 +3,7 @@
     justify-content: center;
     flex-direction: row;
     padding-left: 0%;
+    margin-top: 25px;
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -12,8 +13,8 @@
     cursor: pointer;
     border: solid 2px rgb(191, 191, 191);
     border-radius: 5px;
-    width: 35px;
-    height: 31px;
+    width: 31px;
+    height: 27px;
     margin: 1px;
     /* margin-top: 5px; */
 }
@@ -28,8 +29,8 @@
     cursor: pointer;
     border: solid 2px rgb(160, 160, 160);
     border-radius: 5px;
-    width: 35px;
-    height: 31px;
+    width: 31px;
+    height: 27px;
     margin: 1px;
     /* margin-top: 5px; */
     text-decoration-line: underline;
