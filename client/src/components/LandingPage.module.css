@@ -28,7 +28,7 @@
     padding-top: 50px;
     padding-bottom: 85px;
     font-family: Tahoma, Verdana, Segoe, sans-serif; 
-    font-size: 3.4rem; 
+    font-size: 2.5rem; 
     font-style: normal; 
     font-variant: normal; 
     font-weight: 700; 
@@ -55,14 +55,10 @@
 }
 
 .image3 {
-    /* height: 300px; */
-    /* width: 300px; */
-    height: 58%;
-    width: 65%;
+    height: 50%;
+    width: 60%;
     align-items: center;
-    margin-top: -10%;
-    /* margin-left: 185px; */
-    /* margin-top: 45px; */
+    margin-top: -15%;
     
 }
 
@@ -70,23 +66,16 @@
     font-family: helvetica;
     font-weight: bold;
     color: #3D4280 !important;
-    font-size: 3rem;
+    font-size: 2.2rem;
     text-shadow: 0px 0px 0px #1A242E;
     box-shadow: 2px 2px 3px #EDEDED;
     border-radius: 17px;
     border: 3px solid #3D4280;
     background: #F9F9FC;
     cursor: pointer;
-    /* padding-left: 15%; */
-    /* padding-right: 15%; */
     padding-top: 3%;
     padding-bottom: 3%;
     width: 27vw;
-    /* margin-left: 80px; */
-    /* margin-bottom: 100px; */
-    /* margin-right: 100px; */
-    /* width: 500px; */
-    /* height: 100px; */
   }
   
   .btn:hover {
@@ -101,9 +90,8 @@
     margin-bottom: 10%;
     margin-top: -10px;
     text-align: center;
-    /* width: 500px; */
     font-family: Tahoma; 
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
     font-style: normal; 
     font-variant: normal; 
     font-weight: 540; 
