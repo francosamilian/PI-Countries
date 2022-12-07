@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DATABASE_URL,
+  DATABASE_URL_RAILWAY,
 } = process.env;
 
 // const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
@@ -12,7 +12,7 @@ const {
 // });
 
 const sequelize = new Sequelize(
-  DATABASE_URL,
+  DATABASE_URL_RAILWAY,
   {
     dialectOptions: {
       ssl: {
