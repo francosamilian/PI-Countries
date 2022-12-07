@@ -17,12 +17,11 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-require('dotenv').config();
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const { default: axios } = require('axios');
 const { Country } = require('./src/db.js');
-const { PORT } = process.env;
+const PORT = process.env.PORT || 3001;
 
 // Syncing all the models at once. 
 conn.sync({force: true}).then( async () => { 
