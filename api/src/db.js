@@ -12,7 +12,7 @@ const {
 // });
 
 const sequelize = new Sequelize(
-  "https://api.render.com/deploy/srv-cg2v2te4dada1e3k2e1g?key=0SwCXh55Rpc",
+  DATABASE_URL_RENDER,
   {
     dialectOptions: {
       ssl: {
