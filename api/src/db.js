@@ -12,7 +12,7 @@ const {
 // });
 
 const sequelize = new Sequelize(
-  DATABASE_URL,
+  DATABASE_URL_RAILWAY,
   {
     dialectOptions: {
       ssl: {
